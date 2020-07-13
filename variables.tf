@@ -1,15 +1,3 @@
-variable "controller_ip" {
-  default = ""
-}
-
-variable "username" {
-  default = ""
-}
-
-variable "password" {
-  default = ""
-}
-
 variable "oci_region" {
   description = "The OCI region where the Transit VCN and gateways will be provisioned in."
   type        = string
