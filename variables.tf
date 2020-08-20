@@ -1,23 +1,27 @@
-variable "oci_region" {
-  description = "The OCI region where the Transit VCN and gateways will be provisioned in."
-  type        = string
-  default     = "us-ashburn-1"
+variable "region" {
+    description = "The OCI region to deploy this module in"
+    type = string
 }
 
-variable "oci_transit_cidr" {
-  description = "The CIDR block of the VCN."
-  type        = string
-  default     = "10.2.0.0/16"
+variable "cidr" {
+    description = "The CIDR range to be used for the VPC"
+    type = string
 }
 
 variable "oci_account_name" {
-  description = "The OCI Access Account name defined in the Aviatrix Controller."
-  type        = string
-  default     = "TM-OCI"
+    description = "The OCI account name, as known by the Aviatrix controller"
+    type = string
 }
 
-variable "oci_gw_size" {
-  description = "The compute instance shape size for the Aviatrix gateways."
-  type        = string
-  default     = "VM.Standard2.2"
+# Optional
+variable "instance_size" {
+    description = "OCI Instance size for the Aviatrix gateways"
+    type = string
+    default = "VM.Standard2.2"
+}
+
+variable "ha_gw" {
+    description = "Boolean to determine if module will be deployed in HA or single mode"
+    type = bool
+    default = true
 }

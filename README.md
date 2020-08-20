@@ -25,21 +25,21 @@ The following variables are required:
 
 key | value
 --- | ---
-oci_region | OCI region to deploy the transit VPC in
+region | OCI region to deploy the transit VPC in
 oci_account_name | The OCI account name on the Aviatrix controller, under which the controller will deploy this VCN
-oci_transit_cidr | The IP CIDR wo be used to create the VCN.
+cidr | The IP CIDR wo be used to create the VCN.
 
 The following variables are optional:
 
 key | default | value
 --- | --- | ---
-oci_gw_size | VM.Standard2.2 | Size of the transit gateway instances
+instance_size | VM.Standard2.2 | Size of the transit gateway instances
+ha_gw | true | Set to false te deploy a single transit GW.
 
 Outputs
 This module will return the following objects:
 
 key | description
 --- | ---
-oci_transit_vcn | The created vcn as an object with all of it's attributes. This was created using the aviatrix_vpc resource.
-oci_transit_gateway | The created Aviatrix transit gateway as an object with all of it's attributes.
-oci_transit_gw_name | The gw_name of the Aviatrix OCI Transit Gateway
+vcn | The created VCN as an object with all of it's attributes. This was created using the aviatrix_vpc resource.
+transit_gateway | The created Aviatrix transit gateway as an object with all of it's attributes.
