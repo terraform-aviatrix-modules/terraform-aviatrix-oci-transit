@@ -5,8 +5,11 @@
 This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
 
 ### Diagram
+<img src="images/oci-ha.png"  height="250">
 
-<img src="https://avtx-tf-modules-images.s3.amazonaws.com/transit-vcn-oci.png"  height="250">
+with ha_gw set to false, the following will be deployed:
+
+<img src="oci-single.png" height="250">
 
 ### Usage Example
 
