@@ -9,7 +9,7 @@ This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix
 
 with ha_gw set to false, the following will be deployed:
 
-<img src="oci-single.png" height="250">
+<img src="images/oci-single.png" height="250">
 
 ### Usage Example
 
