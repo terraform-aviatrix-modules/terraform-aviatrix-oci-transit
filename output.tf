@@ -1,14 +1,9 @@
-output "oci_transit_vcn" {
-  description = "The full VCN object"
-  value       = aviatrix_vpc.oci_transit_vcn
+output "vpc" {
+  description = "The created VPC with all of it's attributes"
+  value       = aviatrix_vpc.default
 }
 
-output "oci_transit_gateway" {
-  description = "The full transit gateway object"
-  value       = aviatrix_transit_gateway.oci_transit_gateway
-}
-
-output "oci_transit_gw_name" {
-  description = "The name of the OCI transit gateway"
-  value       = aviatrix_transit_gateway.oci_transit_gateway.gw_name
+output "transit_gateway" {
+  description = "The Aviatrix transit gateway object with all of it's attributes"
+  value       = var.ha_gw ? aviatrix_transit_gateway.ha[0] : aviatrix_transit_gateway.single[0]
 }
