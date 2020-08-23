@@ -18,9 +18,9 @@ with ha_gw set to false, the following will be deployed:
 module "oci_transit_1" {
   source             = "terraform-aviatrix-modules/oci-transit/aviatrix"
   version            = "1.0.0"
-  oci_transit_cidr   = "10.10.0.0/16"
-  oci_region         = "us-ashburn-1"
-  oci_account_name   = "TM-OCI"
+  cidr               = "10.10.0.0/16"
+  region             = "us-ashburn-1"
+  account            = "TM-OCI"
 }
 ```
 
@@ -29,13 +29,14 @@ The following variables are required:
 key | value
 --- | ---
 region | OCI region to deploy the transit VPC in
-oci_account_name | The OCI account name on the Aviatrix controller, under which the controller will deploy this VCN
+account | The OCI account name on the Aviatrix controller, under which the controller will deploy this VCN
 cidr | The IP CIDR wo be used to create the VCN.
 
 The following variables are optional:
 
 key | default | value
 --- | --- | ---
+name | avx-\<region\>-transit | Provide a custom name for VPC and Gateway resources. Result will be avx-\<name\>-transit.
 instance_size | VM.Standard2.2 | Size of the transit gateway instances
 ha_gw | true | Set to false te deploy a single transit GW.
 

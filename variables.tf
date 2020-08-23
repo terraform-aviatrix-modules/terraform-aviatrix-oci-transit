@@ -8,7 +8,7 @@ variable "cidr" {
   type        = string
 }
 
-variable "oci_account_name" {
+variable "account" {
   description = "The OCI account name, as known by the Aviatrix controller"
   type        = string
 }
@@ -24,4 +24,10 @@ variable "ha_gw" {
   description = "Boolean to determine if module will be deployed in HA or single mode"
   type        = bool
   default     = true
+}
+
+variable "name" {
+  description = "Provide a custom name for VPC and Gateway resources."
+  type        = string
+  default     = ""
 }
