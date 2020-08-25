@@ -19,7 +19,6 @@ module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
   version     = "1.0.0"
 
-  name        = "my-transit"
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
   account     = "TM-OCI"
@@ -30,7 +29,6 @@ The following variables are required:
 
 key | value
 --- | ---
-name | avx-\<name\>-transit
 region | OCI region to deploy the transit VCN in
 account | The OCI account name on the Aviatrix controller, under which the controller will deploy this VCN
 cidr | The IP CIDR wo be used to create the VCN.
@@ -39,6 +37,7 @@ The following variables are optional:
 
 key | default | value
 --- | --- | ---
+name | null | When this string is set, user defined name is applied to all infrastructure supporting n+1 sets within a same region or other customization
 instance_size | VM.Standard2.2 | Size of the transit gateway instances
 ha_gw | true | Set to false te deploy a single transit GW.
 

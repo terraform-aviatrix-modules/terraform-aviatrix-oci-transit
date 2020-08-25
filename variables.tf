@@ -1,5 +1,6 @@
 variable "name" {
   description = "Provide a custom name for VPC and Gateway resources."
+  default     = ""
   type        = string
 }
 
