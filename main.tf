@@ -1,7 +1,7 @@
 #Transit VPC
 resource "aviatrix_vpc" "default" {
   cloud_type   = 16
-  name         = length(var.name) > 0 ? "avx-${var.name}-transit" : "avx-${var.region}-transit"
+  name         = "avx-${var.name}-transit"
   region       = var.region
   cidr         = var.cidr
   account_name = var.account
@@ -13,7 +13,7 @@ resource "aviatrix_transit_gateway" "single" {
   enable_active_mesh = true
   cloud_type         = 16
   vpc_reg            = var.region
-  gw_name            = length(var.name) > 0 ? "avx-${var.name}-transit" : "avx-${var.region}-transit"
+  gw_name            = "avx-${var.name}-transit"
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.name
   account_name       = var.account
@@ -27,7 +27,7 @@ resource "aviatrix_transit_gateway" "ha" {
   enable_active_mesh = true
   cloud_type         = 16
   vpc_reg            = var.region
-  gw_name            = length(var.name) > 0 ? "avx-${var.name}-transit" : "avx-${var.region}-transit"
+  gw_name            = "avx-${var.name}-transit"
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.name
   account_name       = var.account
