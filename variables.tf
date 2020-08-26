@@ -1,3 +1,9 @@
+variable "name" {
+  description = "Provide a custom name for VPC and Gateway resources."
+  default     = ""
+  type        = string
+}
+
 variable "region" {
   description = "The OCI region to deploy this module in"
   type        = string
@@ -24,10 +30,4 @@ variable "ha_gw" {
   description = "Boolean to determine if module will be deployed in HA or single mode"
   type        = bool
   default     = true
-}
-
-variable "name" {
-  description = "Provide a custom name for VPC and Gateway resources."
-  type        = string
-  default     = ""
 }
