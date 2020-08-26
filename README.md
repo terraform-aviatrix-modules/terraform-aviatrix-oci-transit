@@ -17,7 +17,7 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "1.0.0"
+  version     = "1.0.1"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
@@ -40,6 +40,8 @@ key | default | value
 name | null | When this string is set, user defined name is applied to all infrastructure supporting n+1 sets within a same region or other customization
 instance_size | VM.Standard2.2 | Size of the transit gateway instances
 ha_gw | true | Set to false te deploy a single transit GW.
+connected_transit | true |
+active_mesh | true |
 
 Outputs
 This module will return the following objects:
