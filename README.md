@@ -40,8 +40,8 @@ key | default | value
 name | null | When this string is set, user defined name is applied to all infrastructure supporting n+1 sets within a same region or other customization
 instance_size | VM.Standard2.2 | Size of the transit gateway instances
 ha_gw | true | Set to false te deploy a single transit GW.
-connected_transit | true |
-active_mesh | true |
+connected_transit | true | Set to false to disable connected_transit
+active_mesh | true | Set to false to disable active_mesh
 
 Outputs
 This module will return the following objects:
