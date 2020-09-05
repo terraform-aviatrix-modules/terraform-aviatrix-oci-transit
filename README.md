@@ -1,8 +1,15 @@
 # Terraform Aviatrix OCI Transit
 
 ### Description
-
 This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
+
+### Compatibility
+Module version | Terraform version | Controller version | Terraform provider version
+:--- | :--- | :--- | :---
+v1.1.0 | 0.12 | | 
+v1.0.2 | 0.12 | | 
+v1.0.1 | 0.12 | |
+v1.0.0 | 0.12 | |
 
 ### Diagram
 <img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-oci-transit/blob/master/img/oci-ha.png?raw=true"  height="250">
@@ -17,11 +24,11 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "1.0.1"
+  version     = "1.1.0"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
-  account     = "TM-OCI"
+  account     = "OCI"
 }
 ```
 
