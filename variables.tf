@@ -33,13 +33,13 @@ variable "ha_gw" {
 }
 
 variable "connected_transit" {
-  description = ""
+  description = "Enables Aviatrix connected transit"
   type        = bool
   default     = true
 }
 
 variable "active_mesh" {
-  description = ""
+  description = "Set to false to disable active mesh."
   type        = bool
   default     = true
 }
