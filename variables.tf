@@ -69,7 +69,7 @@ variable "suffix" {
 }
 
 locals {
-  lower_name = replace(lower(var.name), " ", "-")
+  lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
   suffix     = var.suffix ? "-transit" : ""
   name       = "${local.prefix}${local.lower_name}${local.suffix}"
