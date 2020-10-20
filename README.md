@@ -6,6 +6,7 @@ This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v2.0.0 | 0.12 | >=6.2 | >=0.2.17
 v1.1.1 | 0.12 | | 
 v1.1.0 | 0.12 | | 
 v1.0.2 | 0.12 | | 
@@ -25,7 +26,7 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "1.1.1"
+  version     = "2.0.0"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
@@ -54,6 +55,7 @@ learned_cidr_approval | false | Switch to true to enable learned CIDR approval
 active_mesh | true | Set to false to disable active_mesh
 prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -transit
+enable_segmentation | false | Switch to true to enable transit segmentation
 
 Outputs
 This module will return the following objects:
