@@ -27,8 +27,8 @@ resource "aviatrix_transit_gateway" "single" {
   #enable_firenet                   = var.enable_firenet
   #enable_transit_firenet           = var.enable_transit_firenet
   #enable_egress_transit_firenet    = var.enable_egress_transit_firenet
-  bgp_polling_time                 = var.bgp_polling_time
-  bgp_ecmp                         = var.bgp_ecmp
+  bgp_polling_time = var.bgp_polling_time
+  bgp_ecmp         = var.bgp_ecmp
 }
 
 # HA Transit GW
@@ -53,6 +53,6 @@ resource "aviatrix_transit_gateway" "ha" {
   #enable_firenet                   = var.enable_firenet
   #enable_transit_firenet           = var.enable_transit_firenet
   #enable_egress_transit_firenet    = var.enable_egress_transit_firenet
-  bgp_polling_time                 = var.bgp_polling_time
-  bgp_ecmp                         = var.bgp_ecmp
+  bgp_polling_time = var.bgp_polling_time
+  bgp_ecmp         = var.bgp_ecmp
 }
