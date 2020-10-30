@@ -51,6 +51,21 @@ connected_transit | true | Set to false to disable connected_transit
 bgp_manual_spoke_advertise_cidrs | | Intended CIDR list to advertise via BGP. Example: "10.2.0.0/16,10.4.0.0/16" 
 learned_cidr_approval | false | Switch to true to enable learned CIDR approval
 active_mesh | true | Set to false to disable active_mesh
+single_ip_snat | false | Enable single_ip mode Source NAT for this container
+enable_segmentation  | false | Enable transit gateway for segmentation
+enable_advertise_transit_cidr  | false | Switch to enable/disable advertise transit VPC network CIDR for a VGW connection
+bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
+bgp_ecmp  | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
+
+Not currently supported using this module:
+
+key | description
+:---|:---
+enable_firenet  | false | Sign of readiness for FireNet connection
+enable_transit_firenet  | false | Sign of readiness for Transit FireNet connection
+enable_egress_transit_firenet  | false | Enable Egress Transit FireNet
+local_as_number | Changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations
+prepend_as_path | List of AS numbers to populate BGP AP_PATH field when it advertises to VGW or peer devices
 
 Outputs
 This module will return the following objects:
