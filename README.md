@@ -6,7 +6,8 @@ This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
-v2.0.0 | 0.12 | >=6.2 | >=0.2.17
+v3.0.0 | 0.13 | >=6.2 | >=2.17
+v2.0.0 | 0.12 | >=6.2 | >=2.17
 v1.1.1 | 0.12 | | 
 v1.1.0 | 0.12 | | 
 v1.0.2 | 0.12 | | 
@@ -14,11 +15,11 @@ v1.0.1 | 0.12 | |
 v1.0.0 | 0.12 | |
 
 ### Diagram
-<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-oci-transit/blob/master/img/oci-ha.png?raw=true"  height="250">
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-oci-transit/blob/master/img/oci-ha-v3.png?raw=true"  height="250">
 
 with ha_gw set to false, the following will be deployed:
 
-<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-oci-transit/blob/master/img/oci-single.png?raw=true" height="250">
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-oci-transit/blob/master/img/oci-single-v3.png?raw=true" height="250">
 
 ### Usage Example
 
@@ -26,7 +27,7 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "2.0.0"
+  version     = "3.0.0"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
