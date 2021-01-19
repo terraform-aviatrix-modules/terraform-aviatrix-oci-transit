@@ -6,6 +6,7 @@ This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v3.0.1 | 0.13 | >=6.2 | >=2.17
 v3.0.0 | 0.13 | >=6.2 | >=2.17
 v2.0.0 | 0.12 | >=6.2 | >=2.17
 v1.1.1 | 0.12 | | 
@@ -27,7 +28,7 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "3.0.0"
+  version     = "3.0.1"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
@@ -60,9 +61,6 @@ enable_segmentation | false | Switch to true to enable transit segmentation
 single_az_ha | true | Set to false if Controller managed Gateway HA is desired
 single_ip_snat | false | Enable single_ip mode Source NAT for this container
 enable_advertise_transit_cidr  | false | Switch to enable/disable advertise transit VPC network CIDR for a VGW connection
-enable_firenet  | false | Sign of readiness for FireNet connection
-enable_transit_firenet  | false | Sign of readiness for Transit FireNet connection
-enable_egress_transit_firenet  | false | Enable Egress Transit FireNet
 bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
 bgp_ecmp  | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
 

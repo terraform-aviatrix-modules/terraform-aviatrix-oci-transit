@@ -26,9 +26,6 @@ resource "aviatrix_transit_gateway" "default" {
   single_az_ha                     = var.single_az_ha
   single_ip_snat                   = var.single_ip_snat
   enable_advertise_transit_cidr    = var.enable_advertise_transit_cidr
-  enable_firenet                   = var.enable_firenet
-  enable_transit_firenet           = var.enable_transit_firenet
-  enable_egress_transit_firenet    = var.enable_egress_transit_firenet
   bgp_polling_time                 = var.bgp_polling_time
   bgp_ecmp                         = var.bgp_ecmp
 }
