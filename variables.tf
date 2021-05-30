@@ -104,9 +104,19 @@ variable "bgp_ecmp" {
   default     = false
 }
 
+variable "insane_mode" {
+  type    = bool
+  default = false
+}
+
 locals {
   lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
   suffix     = var.suffix ? "-transit" : ""
   name       = "${local.prefix}${local.lower_name}${local.suffix}"
+  cidrbits   = tonumber(split("/", var.cidr)[1])
+  newbits    = 26 - local.cidrbits
+  netnum     = pow(2, local.newbits)
+  subnet     = var.insane_mode ? cidrsubnet(var.cidr, local.newbits, local.netnum - 2) : aviatrix_vpc.default.public_subnets[0].cidr
+  ha_subnet  = var.insane_mode ? cidrsubnet(var.cidr, local.newbits, local.netnum - 1) : aviatrix_vpc.default.public_subnets[0].cidr
 }

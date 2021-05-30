@@ -6,6 +6,7 @@ This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v4.0.4 | 0.13,0.14 | >= 6.4 | >= 2.19
 v3.0.1 | 0.13 | >=6.2 | >=2.17
 v3.0.0 | 0.13 | >=6.2 | >=2.17
 v2.0.0 | 0.12 | >=6.2 | >=2.17
@@ -28,7 +29,7 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "3.0.1"
+  version     = "4.0.1"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
@@ -63,7 +64,13 @@ single_ip_snat | false | Enable single_ip mode Source NAT for this container
 enable_advertise_transit_cidr  | false | Switch to enable/disable advertise transit VPC network CIDR for a VGW connection
 bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
 bgp_ecmp  | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
-
+insane_mode | false | Enable insane mode high performance encryption
+local_as_number | null | Changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations
+enable_bgp_over_lan | false | Enable BGp over LAN. Creates eth4 for integration with SDWAN for example
+tunnel_detection_time | null | The IPsec tunnel down detection time for the Spoke Gateway in seconds. Must be a number in the range [20-600]
+enable_multi_tier_transit | false | Set to true to enable multi tier transit
+learned_cidrs_approval_mode | null | Learned cidrs approval mode. Defaults to Gateway. Valid values: gateway, connection
+ 
 Outputs
 This module will return the following objects:
 
