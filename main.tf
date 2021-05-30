@@ -16,8 +16,8 @@ resource "aviatrix_transit_gateway" "default" {
   gw_size                          = var.instance_size
   vpc_id                           = aviatrix_vpc.default.name
   account_name                     = var.account
-  subnet                           = aviatrix_vpc.default.subnets[0].cidr
-  ha_subnet                        = var.ha_gw ? aviatrix_vpc.default.subnets[0].cidr : null
+  subnet                           = local.subnet
+  ha_subnet                        = var.ha_gw ? local.ha_subnet : null
   ha_gw_size                       = var.ha_gw ? var.instance_size : null
   connected_transit                = var.connected_transit
   bgp_manual_spoke_advertise_cidrs = var.bgp_manual_spoke_advertise_cidrs
@@ -28,4 +28,10 @@ resource "aviatrix_transit_gateway" "default" {
   enable_advertise_transit_cidr    = var.enable_advertise_transit_cidr
   bgp_polling_time                 = var.bgp_polling_time
   bgp_ecmp                         = var.bgp_ecmp
+  insane_mode                      = var.insane_mode
+  local_as_number                  = var.local_as_number
+  enable_bgp_over_lan              = var.enable_bgp_over_lan
+  tunnel_detection_time            = var.tunnel_detection_time
+  enable_multi_tier_transit        = var.enable_multi_tier_transit
+  learned_cidrs_approval_mode      = var.learned_cidrs_approval_mode
 }
