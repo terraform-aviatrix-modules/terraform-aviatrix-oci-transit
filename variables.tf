@@ -23,7 +23,7 @@ variable "account" {
 variable "instance_size" {
   description = "OCI Instance size for the Aviatrix gateways"
   type        = string
-  default     = "VM.Standard2.2"
+  default     = "VM.Standard2.4"
 }
 
 variable "ha_gw" {
@@ -107,6 +107,36 @@ variable "bgp_ecmp" {
 variable "insane_mode" {
   type    = bool
   default = false
+}
+
+variable "local_as_number" {
+  description = "Changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations."
+  type        = string
+  default     = null
+}
+
+variable "enable_bgp_over_lan" {
+  description = "Enable BGp over LAN. Creates eth4 for integration with SDWAN for example"
+  type        = bool
+  default     = false
+}
+
+variable "tunnel_detection_time" {
+  description = "The IPsec tunnel down detection time for the Spoke Gateway in seconds. Must be a number in the range [20-600]."
+  type        = number
+  default     = null
+}
+
+variable "enable_multi_tier_transit" {
+  description = "Set to true to enable multi tier transit."
+  type        = bool
+  default     = false
+}
+
+variable "learned_cidrs_approval_mode" {
+  description = "Learned cidrs approval mode. Defaults to Gateway. Valid values: gateway, connection"
+  type        = string
+  default     = null
 }
 
 locals {

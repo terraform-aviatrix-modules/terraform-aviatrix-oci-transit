@@ -50,7 +50,7 @@ The following variables are optional:
 key | default | value
 --- | --- | ---
 name | null | When this string is set, user defined name is applied to all infrastructure supporting n+1 sets within a same region or other customization
-instance_size | VM.Standard2.2 | Size of the transit gateway instances
+instance_size | VM.Standard2.4 | Size of the transit gateway instances
 ha_gw | true | Set to false te deploy a single transit GW.
 connected_transit | true | Set to false to disable connected_transit
 bgp_manual_spoke_advertise_cidrs | | Intended CIDR list to advertise via BGP. Example: "10.2.0.0/16,10.4.0.0/16" 
