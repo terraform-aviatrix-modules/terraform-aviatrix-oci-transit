@@ -3,10 +3,13 @@
 ### Description
 This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
 
+**_OCI Regions containing multiple Availabilty Domains_** ```us-ashburn-1, us-phoenix-1, uk-london-1, eu-frankfurt-1```
+
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
-v4.0.4 | 0.13,0.14 | >= 6.4 | >= 2.19
+v4.0.3 | 0.13, 0.14, 0.15 | >=6.4 | 2.19.5
+v4.0.2 | 0.13,0.14 | >= 6.4 | >= 2.19
 v3.0.1 | 0.13 | >=6.2 | >=2.17
 v3.0.0 | 0.13 | >=6.2 | >=2.17
 v2.0.0 | 0.12 | >=6.2 | >=2.17
@@ -29,7 +32,7 @@ with ha_gw set to false, the following will be deployed:
 # OCI Transit Module
 module "oci_transit_1" {
   source      = "terraform-aviatrix-modules/oci-transit/aviatrix"
-  version     = "4.0.1"
+  version     = "4.0.3"
 
   cidr        = "10.10.0.0/16"
   region      = "us-ashburn-1"
