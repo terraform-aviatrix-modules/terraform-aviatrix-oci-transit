@@ -34,4 +34,8 @@ resource "aviatrix_transit_gateway" "default" {
   tunnel_detection_time            = var.tunnel_detection_time
   enable_multi_tier_transit        = var.enable_multi_tier_transit
   learned_cidrs_approval_mode      = var.learned_cidrs_approval_mode
+  availability_domain              = aviatrix_vpc.default.availability_domains[0]
+  fault_domain                     = aviatrix_vpc.default.fault_domains[0]
+  ha_availability_domain           = var.ha_gw ? aviatrix_vpc.default.availability_domains[1] : null
+  ha_fault_domain                  = var.ha_gw ? aviatrix_vpc.default.fault_domains[1] : null
 }
