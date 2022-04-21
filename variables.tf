@@ -50,12 +50,6 @@ variable "learned_cidr_approval" {
   default     = "false"
 }
 
-variable "active_mesh" {
-  description = "Set to false to disable active mesh."
-  type        = bool
-  default     = true
-}
-
 variable "prefix" {
   description = "Boolean to determine if name will be prepended with avx-"
   type        = bool
