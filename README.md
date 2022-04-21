@@ -10,9 +10,12 @@ This module deploys a VCN and an Aviatrix transit gateway. Defining the Aviatrix
 
 **_OCI Regions containing multiple Availabilty Domains_** ```us-ashburn-1, us-phoenix-1, uk-london-1, eu-frankfurt-1```
 
+**_Updated version 99 to support 6.6_**
+
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v99.9 | 1.18 | 6.6.5545 | 2.21.2
 v4.0.3 | 0.13, 0.14, 0.15 | >=6.4 | 2.19.5
 v4.0.2 | 0.13,0.14 | >= 6.4 | >= 2.19
 v3.0.1 | 0.13 | >=6.2 | >=2.17
